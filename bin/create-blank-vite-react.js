@@ -35,6 +35,18 @@ function copyDir(src, dest) {
 
 copyDir(templatePath, projectPath)
 
+// Fix gitignore → .gitignore
+function fixGitignore(projectDir) {
+  const from = path.join(projectDir, "gitignore")
+  const to = path.join(projectDir, ".gitignore")
+
+  if (fs.existsSync(from) && !fs.existsSync(to)) {
+    fs.renameSync(from, to)
+    console.log("✔ Renamed gitignore → .gitignore")
+  }
+}
+fixGitignore(projectPath)
+
 // Update package.json name
 const packageJsonPath = path.join(projectPath, "package.json")
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"))
