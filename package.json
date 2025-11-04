@@ -1,6 +1,6 @@
 {
   "name": "create-blank-vite-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create a completely blank React + Vite project with minimal setup",
   "type": "module",
   "bin": {
